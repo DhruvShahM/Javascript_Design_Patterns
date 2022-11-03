@@ -4,7 +4,7 @@ import { EmailAlertObserverImpl } from './Observer/EmailAlertObserverImpl';
 import { MobileAlertObserverImpl } from './Observer/MobileAlertObserverImpl';
 import { NotificationAlertObserver } from './Observer/NotificationAlertObserver';
 
-function Main(){
+function main(){
 
    let iphoneStockObservable=new IphoneObservableImpl(); 
    
@@ -22,4 +22,4 @@ function Main(){
 }
 
 
-Main();
+main();
