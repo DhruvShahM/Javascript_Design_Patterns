@@ -29,6 +29,7 @@ export class IphoneObservableImpl implements StockObservable {
         }
 
         getStockCount(): number {
+            console.log(`current stock are`+this.stockCount);   
             return this.stockCount;
         }
 
