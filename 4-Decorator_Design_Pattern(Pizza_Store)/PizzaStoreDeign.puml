@@ -1,6 +1,6 @@
 @startuml
 
-title Pizaa Store Relationships - Class Diagram
+title Pizza Store Relationships - Class Diagram
 
 
 class main{
