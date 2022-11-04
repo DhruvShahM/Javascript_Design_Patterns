@@ -1,0 +1,31 @@
+@startuml
+
+title Pizaa Store Relationships - Class Diagram
+
+
+abstract class PizzaDecorator {
+  +cost():number
+}
+
+abstract class ToppingDecorator {
+  +cost():number
+}
+
+class Margerita
+class Vegdelight
+class FarmHouse
+class ExtraCheese
+class Mushroom
+Class Jalapeno
+
+
+PizzaDecorator "1" *-up- "1" Margerita: Inheritance
+PizzaDecorator "1" *-up- "1" Vegdelight: Inheritance
+PizzaDecorator "1" *-up- "1" FarmHouse: Inheritance
+PizzaDecorator "1" *-up- "1" ToppingDecorator: Inheritance
+PizzaDecorator o-- ToppingDecorator:Aggregation
+ToppingDecorator "1" *-up- "1" ExtraCheese
+ToppingDecorator "1" *-up- "1" Mushroom
+ToppingDecorator "1" *-up- "1" Jalapeno
+
+@enduml
