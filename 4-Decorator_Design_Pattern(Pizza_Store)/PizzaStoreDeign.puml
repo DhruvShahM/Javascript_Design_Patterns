@@ -3,6 +3,10 @@
 title Pizaa Store Relationships - Class Diagram
 
 
+class main{
+  +main():void
+}
+
 abstract class PizzaDecorator {
   +cost():number
 }
@@ -19,6 +23,7 @@ class Mushroom
 Class Jalapeno
 
 
+main o-- PizzaDecorator:Aggregation
 PizzaDecorator "1" *-up- "1" Margerita: Inheritance
 PizzaDecorator "1" *-up- "1" Vegdelight: Inheritance
 PizzaDecorator "1" *-up- "1" FarmHouse: Inheritance
