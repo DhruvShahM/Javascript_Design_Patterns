@@ -1,0 +1,61 @@
+@startuml
+
+title VehicleAbstractFactory Relationships - Class Diagram
+
+class main{
+  +main():void
+}
+
+
+abstract class VehicleFactory2{
+     +getVehiclesFactory1():VehicleFactory1:   
+}
+
+abstract class VehicleFactory1{
+     +getVehicles():Vehicle:   
+}
+
+interface Vehicle{
+    +average():void
+}
+
+abstract class LuxaryFactory{
+     +getLuxaryVehicles():Vehicle   
+}
+
+abstract class OrdinaryFactory{
+     +getOrdinaryVehicles():Vehicle   
+}
+
+
+class LuxaryV1{
+    +average():void
+}
+
+class LuxaryV2{
+    +average():void
+}
+class OrdinaryV1{
+    +average():void
+}
+
+class OrdinaryV2{
+    +average():void
+}
+
+main o-- VehicleFactory2:Aggregation
+VehicleFactory1 o-- VehicleFactory2:Aggregation
+OrdinaryFactory o-- VehicleFactory1:Aggregation
+LuxaryFactory o-- VehicleFactory1:Aggregation
+OrdinaryFactory "1" *-up- "1" OrdinaryV1: Inheritance
+OrdinaryFactory "1" *-up- "1" OrdinaryV2: Inheritance
+LuxaryFactory "1" *-up- "1" LuxaryV1: Inheritance
+LuxaryFactory "1" *-up- "1" LuxaryV2: Inheritance
+Vehicle "1" *-up- "Many" LuxaryV1: Inheritance
+Vehicle "1" *-up- "Many" LuxaryV1: Inheritance
+Vehicle "1" *-up- "Many" LuxaryV2: Inheritance
+Vehicle "1" *-up- "Many" OrdinaryV1: Inheritance
+Vehicle "1" *-up- "Many" OrdinaryV2: Inheritance
+
+
+@enduml

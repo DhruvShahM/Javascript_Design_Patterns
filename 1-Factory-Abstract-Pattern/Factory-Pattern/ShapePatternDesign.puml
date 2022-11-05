@@ -1,0 +1,38 @@
+@startuml
+
+title ShapeFactory Relationships - Class Diagram
+
+class main{
+  +main():void
+}
+
+abstract class SHAPEFACTORY{
+     +getShape():SHAPE   
+}
+
+
+interface SHAPE{
+    +draw():void
+}
+
+
+class CIRCLE{
+    +draw():void
+}
+
+class SQUARE{
+    +draw():void
+}
+
+class RECTANGLE{
+    +draw():void
+}
+
+main o-- SHAPEFACTORY:Aggregation
+SHAPEFACTORY o-- SHAPE:Aggregation
+SHAPE "1" *-up- "1" CIRCLE: Inheritance
+SHAPE "1" *-up- "1" SQUARE: Inheritance
+SHAPE "1" *-up- "1" RECTANGLE: Inheritance
+
+
+@enduml
